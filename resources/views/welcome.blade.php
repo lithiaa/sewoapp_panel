@@ -110,7 +110,7 @@
       aria-label="Loading..."
     >
       <img
-        src="{{ Vite::asset('resources/img/Loading_Screen.png') }}"
+        src="{{ asset('images/Loading_Screen.png') }}"
         alt="Sewoapp Logo"
         class="w-8 h-auto animate-blink"
       />
@@ -141,7 +141,7 @@
               class="ic-navbar-logo block w-full py-5 text-primary-color"
             >
               <img
-                src="{{ Vite::asset('resources/img/Sewoapp_Navbar.png') }}"
+                src="{{ asset('images/Sewoapp_Navbar.png') }}"
                 alt="Sewoapp Navbar Logo"
                 class="w-full h-auto"
               />
@@ -2823,7 +2823,7 @@
             <div class="w-full">
               <a href="." class="inline-block mb-5">
               <img
-                src="{{ Vite::asset('resources/img/Sewoapp_Footer.png') }}"
+                src="{{ asset('images/Sewoapp_Footer.png') }}"
                 alt="Sewoapp Navbar Logo"
                 class="w-auto mx-auto"
               />
