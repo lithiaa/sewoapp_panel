@@ -1,0 +1,59 @@
+name: CI/CD Sewoapp
+
+on:
+  push:
+    branches:
+      - main  # atau branch yang kamu pakai untuk deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, bcmath, intl, mysql, curl
+          coverage: none
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Build Frontend (Vite)
+        run: |
+          npm ci
+          npm run build
+
+      - name: Prepare deployment package
+        run: tar -czf deploy.tar.gz ./
+
+      - name: Copy files to EC2 via SSH
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          source: "deploy.tar.gz"
+          target: "/tmp/deploy.tar.gz"
+
+      - name: SSH and deploy to EC2
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.AWS_SSH_KEY }}
+          script: |
+            cd ${{ secrets.APP_DIR }}
+            sudo systemctl stop nginx php8.3-fpm
+            rm -rf *
+            tar -xzf /tmp/deploy.tar.gz -C ${{ secrets.APP_DIR }}
+            composer install --no-dev --optimize-autoloader
+            php artisan migrate --force
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            sudo systemctl start php8.3-fpm nginx
