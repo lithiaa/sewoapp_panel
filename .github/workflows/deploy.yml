@@ -28,18 +28,6 @@ jobs:
           npm ci
           npm run build
 
-      - name: Prepare deployment package
-        run: tar -czf deploy.tar.gz ./
-
-      - name: Copy files to EC2 via SSH
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          key: ${{ secrets.VM_SSH_KEY }}
-          source: "deploy.tar.gz"
-          target: "/tmp/deploy.tar.gz"
-
       - name: SSH and deploy to EC2
         uses: appleboy/ssh-action@v0.1.10
         with:
@@ -49,8 +37,7 @@ jobs:
           script: |
             cd ${{ secrets.APP_DIR }}
             sudo systemctl stop nginx php8.3-fpm
-            rm -rf *
-            tar -xzf /tmp/deploy.tar.gz -C ${{ secrets.APP_DIR }}
+            git pull
             composer install --no-dev --optimize-autoloader
             php artisan migrate --force
             php artisan config:cache
