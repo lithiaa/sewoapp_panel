@@ -1,0 +1,1183 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SewoApp API Documentation",
+        "description": "Dokumentasi API untuk SewoApp",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/api/customers": {
+            "get": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Ambil semua customer",
+                "operationId": "1b873d7b0c63876f30a978b52c4d24d2",
+                "responses": {
+                    "200": {
+                        "description": "List of customers"
+                    }
+                }
+            }
+        },
+        "/api/customers/{id}": {
+            "get": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Ambil data customer berdasarkan ID",
+                "operationId": "d03d1278b7e26322e9a425406bc4e9f2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID customer",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Customer ditemukan"
+                    },
+                    "404": {
+                        "description": "Customer tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Update data customer",
+                "operationId": "32da1527afa82d1a6b0e034146f1032d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Customer berhasil diupdate"
+                    },
+                    "404": {
+                        "description": "Customer tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Hapus customer",
+                "operationId": "e9f16ac94d63309225711a1f3dfb245a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Customer berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Customer tidak ditemukan"
+                    }
+                }
+            }
+        },
+        "/api/customers/login": {
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Login customer",
+                "operationId": "067197acd51faeba139f6294d21fdd2c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "username",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login berhasil"
+                    },
+                    "401": {
+                        "description": "Login gagal"
+                    }
+                }
+            }
+        },
+        "/api/customers/register": {
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Register customer baru",
+                "operationId": "2f4ce33eaa49c1470f527f42aedae69d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "username",
+                                    "fullname",
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registrasi berhasil"
+                    }
+                }
+            }
+        },
+        "/api/customers/logout": {
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Logout customer",
+                "operationId": "2052d38e47e44bb29e90bb5deb172f07",
+                "responses": {
+                    "200": {
+                        "description": "Logout berhasil"
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Mendapatkan daftar semua pesanan",
+                "operationId": "955bb77a45ae173a485fadb8befed93f",
+                "responses": {
+                    "200": {
+                        "description": "Daftar pesanan berhasil diambil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Order"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Membuat pesanan baru",
+                "operationId": "2123ba58dadb22bd6f2c8081af562230",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id_customer",
+                                    "order_date",
+                                    "start_date",
+                                    "finish_date",
+                                    "status",
+                                    "total_price",
+                                    "payment_method"
+                                ],
+                                "properties": {
+                                    "id_customer": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "order_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-14"
+                                    },
+                                    "start_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-15"
+                                    },
+                                    "finish_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-20"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "pending"
+                                    },
+                                    "total_price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 500000
+                                    },
+                                    "payment_method": {
+                                        "type": "string",
+                                        "example": "transfer"
+                                    },
+                                    "payment_gateway_ref": {
+                                        "type": "string",
+                                        "example": "TRX123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Pesanan berhasil dibuat",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/orders/{id}": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Mendapatkan detail pesanan",
+                "operationId": "88d27387b1e409e075c18609d4a0c300",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID pesanan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detail pesanan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Pesanan tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Mengupdate pesanan",
+                "operationId": "38a1b85e8294795a1b0dc438a36e319f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID pesanan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id_customer": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "order_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-14"
+                                    },
+                                    "start_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-15"
+                                    },
+                                    "finish_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-20"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "completed"
+                                    },
+                                    "total_price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 500000
+                                    },
+                                    "payment_method": {
+                                        "type": "string",
+                                        "example": "transfer"
+                                    },
+                                    "payment_gateway_ref": {
+                                        "type": "string",
+                                        "example": "TRX123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Pesanan berhasil diupdate",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Pesanan tidak ditemukan"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Menghapus pesanan",
+                "operationId": "bab875a1ed962fb33565ab9b48c0d494",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID pesanan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Pesanan berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Pesanan tidak ditemukan"
+                    }
+                }
+            }
+        },
+        "/api/order-details": {
+            "get": {
+                "tags": [
+                    "Order Details"
+                ],
+                "summary": "Mendapatkan daftar semua detail pesanan",
+                "operationId": "e7b43d41efab403b7ce46f3a475d1d05",
+                "responses": {
+                    "200": {
+                        "description": "Daftar detail pesanan berhasil diambil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OrderDetail"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Order Details"
+                ],
+                "summary": "Membuat detail pesanan baru",
+                "operationId": "dd93a1f6bc210c23cd827f3bbfe0975d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id_order",
+                                    "id_vehicle",
+                                    "price",
+                                    "total_days",
+                                    "total_price"
+                                ],
+                                "properties": {
+                                    "id_order": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "id_vehicle": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 250000
+                                    },
+                                    "total_days": {
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "total_price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 1250000
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Detail pesanan berhasil dibuat",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderDetail"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/order-details/{id}": {
+            "get": {
+                "tags": [
+                    "Order Details"
+                ],
+                "summary": "Mendapatkan detail pesanan berdasarkan ID",
+                "operationId": "518b6a2d6a16d8d275e5a5f13ee77fb8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID detail pesanan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detail pesanan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderDetail"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Detail pesanan tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Order Details"
+                ],
+                "summary": "Mengupdate detail pesanan",
+                "operationId": "322a821a2c6e7aeaf6befeb20760c583",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID detail pesanan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id_order": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "id_vehicle": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 250000
+                                    },
+                                    "total_days": {
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "total_price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 1250000
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Detail pesanan berhasil diupdate",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderDetail"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Detail pesanan tidak ditemukan"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Order Details"
+                ],
+                "summary": "Menghapus detail pesanan",
+                "operationId": "d4db6edcff565efa58eb69b176062899",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID detail pesanan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Detail pesanan berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Detail pesanan tidak ditemukan"
+                    }
+                }
+            }
+        },
+        "/api/vehicles": {
+            "get": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Mendapatkan daftar semua kendaraan",
+                "operationId": "043b3ce51f006f946511103cfe1c2ca1",
+                "responses": {
+                    "200": {
+                        "description": "Daftar kendaraan berhasil diambil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Vehicle"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Membuat kendaraan baru",
+                "operationId": "74e9ae3e5f1ee2f69f3a177820d204b9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "vehicle_name",
+                                    "id_partner",
+                                    "id_category",
+                                    "price",
+                                    "vehicle_year",
+                                    "license_plate",
+                                    "status"
+                                ],
+                                "properties": {
+                                    "vehicle_name": {
+                                        "type": "string",
+                                        "example": "Honda Beat"
+                                    },
+                                    "id_partner": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "id_category": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 75000
+                                    },
+                                    "vehicle_year": {
+                                        "type": "integer",
+                                        "example": 2023
+                                    },
+                                    "license_plate": {
+                                        "type": "string",
+                                        "example": "B 1234 XYZ"
+                                    },
+                                    "desc": {
+                                        "type": "string",
+                                        "example": "Motor matic yang nyaman untuk perjalanan"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "available"
+                                    },
+                                    "image_url": {
+                                        "type": "string",
+                                        "example": "https://example.com/image.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Kendaraan berhasil dibuat",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Vehicle"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/vehicles/{id}": {
+            "get": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Mendapatkan detail kendaraan",
+                "operationId": "874afdd20b81543018ea4033fc5e914c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID kendaraan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detail kendaraan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Vehicle"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Kendaraan tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Mengupdate kendaraan",
+                "operationId": "170b50ff07739fd3e9a2f910611ea552",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID kendaraan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "vehicle_name": {
+                                        "type": "string",
+                                        "example": "Honda Beat"
+                                    },
+                                    "id_partner": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "id_category": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 75000
+                                    },
+                                    "vehicle_year": {
+                                        "type": "integer",
+                                        "example": 2023
+                                    },
+                                    "license_plate": {
+                                        "type": "string",
+                                        "example": "B 1234 XYZ"
+                                    },
+                                    "desc": {
+                                        "type": "string",
+                                        "example": "Motor matic yang nyaman untuk perjalanan"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "available"
+                                    },
+                                    "image_url": {
+                                        "type": "string",
+                                        "example": "https://example.com/image.jpg"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Kendaraan berhasil diupdate",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Vehicle"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Kendaraan tidak ditemukan"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Menghapus kendaraan",
+                "operationId": "24688b0d004995602e93b8c1966e6676",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID kendaraan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Kendaraan berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Kendaraan tidak ditemukan"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Order": {
+                "required": [
+                    "id_customer",
+                    "order_date",
+                    "start_date",
+                    "finish_date",
+                    "status",
+                    "total_price",
+                    "payment_method"
+                ],
+                "properties": {
+                    "id_order": {
+                        "description": "ID pesanan",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "id_customer": {
+                        "description": "ID customer",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "order_date": {
+                        "description": "Tanggal pemesanan",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-10-14"
+                    },
+                    "start_date": {
+                        "description": "Tanggal mulai sewa",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-10-15"
+                    },
+                    "finish_date": {
+                        "description": "Tanggal selesai sewa",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-10-20"
+                    },
+                    "status": {
+                        "description": "Status pesanan",
+                        "type": "string",
+                        "example": "pending"
+                    },
+                    "total_price": {
+                        "description": "Total harga",
+                        "type": "number",
+                        "format": "float",
+                        "example": 500000
+                    },
+                    "payment_method": {
+                        "description": "Metode pembayaran",
+                        "type": "string",
+                        "example": "transfer"
+                    },
+                    "payment_gateway_ref": {
+                        "description": "Referensi payment gateway",
+                        "type": "string",
+                        "example": "TRX123456"
+                    },
+                    "created_at": {
+                        "description": "Tanggal dibuat",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-10-14T10:00:00Z"
+                    },
+                    "updated_at": {
+                        "description": "Tanggal diupdate",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-10-14T10:00:00Z"
+                    }
+                },
+                "type": "object"
+            },
+            "OrderDetail": {
+                "required": [
+                    "id_order",
+                    "id_vehicle",
+                    "price",
+                    "total_days",
+                    "total_price"
+                ],
+                "properties": {
+                    "id_order_detail": {
+                        "description": "ID detail pesanan",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "id_order": {
+                        "description": "ID pesanan",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "id_vehicle": {
+                        "description": "ID kendaraan",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "price": {
+                        "description": "Harga per hari",
+                        "type": "number",
+                        "format": "float",
+                        "example": 250000
+                    },
+                    "total_days": {
+                        "description": "Total hari sewa",
+                        "type": "integer",
+                        "example": 5
+                    },
+                    "total_price": {
+                        "description": "Total harga",
+                        "type": "number",
+                        "format": "float",
+                        "example": 1250000
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-10-14T10:00:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-10-14T10:00:00Z"
+                    }
+                },
+                "type": "object"
+            },
+            "Vehicle": {
+                "required": [
+                    "vehicle_name",
+                    "id_partner",
+                    "id_category",
+                    "price",
+                    "vehicle_year",
+                    "license_plate",
+                    "status"
+                ],
+                "properties": {
+                    "id_vehicle": {
+                        "description": "ID kendaraan",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "vehicle_name": {
+                        "description": "Nama kendaraan",
+                        "type": "string",
+                        "example": "Honda Beat"
+                    },
+                    "id_partner": {
+                        "description": "ID partner",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "id_category": {
+                        "description": "ID kategori",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "price": {
+                        "description": "Harga sewa per hari",
+                        "type": "number",
+                        "format": "float",
+                        "example": 75000
+                    },
+                    "vehicle_year": {
+                        "description": "Tahun kendaraan",
+                        "type": "integer",
+                        "example": 2023
+                    },
+                    "license_plate": {
+                        "description": "Nomor plat kendaraan",
+                        "type": "string",
+                        "example": "B 1234 XYZ"
+                    },
+                    "desc": {
+                        "description": "Deskripsi kendaraan",
+                        "type": "string",
+                        "example": "Motor matic yang nyaman"
+                    },
+                    "status": {
+                        "description": "Status kendaraan",
+                        "type": "string",
+                        "example": "available"
+                    },
+                    "image_url": {
+                        "description": "URL gambar kendaraan",
+                        "type": "string",
+                        "example": "https://example.com/image.jpg"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-10-14T10:00:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-10-14T10:00:00Z"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Customers",
+            "description": "API Endpoints untuk manajemen Customer"
+        },
+        {
+            "name": "Orders",
+            "description": "API Endpoints untuk manajemen pesanan"
+        },
+        {
+            "name": "Order Details",
+            "description": "API Endpoints untuk manajemen detail pesanan"
+        },
+        {
+            "name": "Vehicles",
+            "description": "API Endpoints untuk manajemen kendaraan"
+        }
+    ]
+}

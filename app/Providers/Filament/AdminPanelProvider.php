@@ -56,7 +56,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('')
+            ->path('dashboard')
             ->favicon(asset('images/logo.png'))
             ->brandName('Sewoapp')
             ->brandLogo(asset('images/logo.png'))
