@@ -295,21 +295,21 @@
               <div class="scroll-revealed relative z-10 mx-auto max-w-[845px]">
                 <figure class="mt-16">
                   <img
-                    src="./assets/img/hero-rental.png"
+                    src="https://dummyimage.com/800x400/cccccc/ffffff&text=Rental+Kendaraan"
                     alt="Rental Kendaraan"
                     class="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
                   />
                 </figure>
                 <div class="absolute -left-9 bottom-0 z-[-1]">
                   <img
-                    src="./assets/img/dots.svg"
+                    src="https://dummyimage.com/120x120/cccccc/ffffff&text=."
                     alt
                     class="w-[120px] opacity-75"
                   />
                 </div>
                 <div class="absolute -right-6 -top-6 z-[-1]">
                   <img
-                    src="./assets/img/dots.svg"
+                    src="https://dummyimage.com/120x120/cccccc/ffffff&text=."
                     alt
                     class="w-[120px] opacity-75"
                   />
@@ -325,13 +325,13 @@
         <div class="container">
           <div class="grid grid-cols-1 gap-14 lg:grid-cols-2">
             <div class="w-full">
-              <figure class="scroll-revealed max-w-[480px] mx-auto">
-                <img
-                  src="./assets/img/about-rental.jpg"
-                  alt="Tentang Sewoapp"
-                  class="rounded-xl"
-                />
-              </figure>
+                <figure class="scroll-revealed max-w-[480px] mx-auto">
+                    <img
+                        src="https://dummyimage.com/480x320/cccccc/ffffff&text=Tentang+Sewoapp"
+                        alt="Tentang Sewoapp"
+                        class="rounded-xl"
+                    />
+                </figure>
             </div>
 
             <div class="w-full">
@@ -1195,344 +1195,326 @@
         </div>
       </section> --}}
 
-      <!-- Team section -->
-      <section id="team" class="section-area">
-        <div class="container">
-          <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-            <h6 class="mb-2 block text-lg font-semibold text-primary">Team</h6>
-            <h2 class="mb-6">Our Creative Team</h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum available but
-              the majority have suffered alteration in some form.
-            </p>
-          </div>
+    <!-- Team section -->
+    <section id="team" class="section-area">
+    <div class="container">
+      <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
+      <h6 class="mb-2 block text-lg font-semibold text-primary">Tim Kami</h6>
+      <h2 class="mb-6">Tim Kreatif Sewoapp</h2>
+      <p>
+        Sewoapp didukung oleh tim profesional berpengalaman di bidang transportasi, teknologi, dan layanan pelanggan.
+      </p>
+      </div>
 
-          <div class="row">
-            <div class="scroll-revealed col-12 sm:col-6 md:col-4 lg:col-3">
-              <figure
-                class="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1"
-              >
-                <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                  <img
-                    src="./assets/img/avatar/avatar-1.jpg"
-                    alt="Team picture"
-                    class="h-full w-full rounded-full object-cover"
-                  />
-                  <span
-                    class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-red-500 opacity-0 group-hover:opacity-100"
-                  ></span>
-                  <span
-                    class="absolute top-0 right-0 -z-10 h-10 w-10 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100"
-                  ></span>
-                </div>
-                <figcaption class="text-center block">
-                  <h4
-                    class="mb-1 text-lg font-semibold text-body-light-12 dark:text-body-dark-12"
-                  >
-                    Garret Edwards
-                  </h4>
-                  <p
-                    class="mb-5 text-sm text-body-light-11 dark:text-body-dark-11"
-                  >
-                    Art Director
-                  </p>
-                  <div class="flex items-center justify-center gap-5">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-facebook-fill"></i>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-twitter-original"></i>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-instagram-original"></i>
-                    </a>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 md:col-4 lg:col-3">
-              <figure
-                class="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1"
-              >
-                <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                  <img
-                    src="./assets/img/avatar/avatar-2.jpg"
-                    alt="Team picture"
-                    class="h-full w-full rounded-full object-cover"
-                  />
-                  <span
-                    class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-red-500 opacity-0 group-hover:opacity-100"
-                  ></span>
-                  <span
-                    class="absolute top-0 right-0 -z-10 h-10 w-10 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100"
-                  ></span>
-                </div>
-                <figcaption class="text-center block">
-                  <h4
-                    class="mb-1 text-lg font-semibold text-body-light-12 dark:text-body-dark-12"
-                  >
-                    Jonathan Leeson
-                  </h4>
-                  <p
-                    class="mb-5 text-sm text-body-light-11 dark:text-body-dark-11"
-                  >
-                    Web Developer
-                  </p>
-                  <div class="flex items-center justify-center gap-5">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-facebook-fill"></i>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-twitter-original"></i>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-instagram-original"></i>
-                    </a>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 md:col-4 lg:col-3">
-              <figure
-                class="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1"
-              >
-                <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                  <img
-                    src="./assets/img/avatar/avatar-3.jpg"
-                    alt="Team picture"
-                    class="h-full w-full rounded-full object-cover"
-                  />
-                  <span
-                    class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-red-500 opacity-0 group-hover:opacity-100"
-                  ></span>
-                  <span
-                    class="absolute top-0 right-0 -z-10 h-10 w-10 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100"
-                  ></span>
-                </div>
-                <figcaption class="text-center block">
-                  <h4
-                    class="mb-1 text-lg font-semibold text-body-light-12 dark:text-body-dark-12"
-                  >
-                    Joe Russell
-                  </h4>
-                  <p
-                    class="mb-5 text-sm text-body-light-11 dark:text-body-dark-11"
-                  >
-                    UX Designer
-                  </p>
-                  <div class="flex items-center justify-center gap-5">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-facebook-fill"></i>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-twitter-original"></i>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
-                    >
-                      <i class="lni lni-instagram-original"></i>
-                    </a>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+      <div class="row">
+      <div class="scroll-revealed col-12 sm:col-6 md:col-4 lg:col-3">
+        <figure
+        class="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1"
+        >
+        <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
+        <img
+          src="https://dummyimage.com/120x120/cccccc/ffffff&text=AK"
+          alt="Team picture"
+          class="h-full w-full rounded-full object-cover"
+        />
+        <span
+          class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-red-500 opacity-0 group-hover:opacity-100"
+        ></span>
+        <span
+          class="absolute top-0 right-0 -z-10 h-10 w-10 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100"
+        ></span>
         </div>
-      </section>
+        <figcaption class="text-center block">
+        <h4
+          class="mb-1 text-lg font-semibold text-body-light-12 dark:text-body-dark-12"
+        >
+          Altanov Ken
+        </h4>
+        <p
+          class="mb-5 text-sm text-body-light-11 dark:text-body-dark-11"
+        >
+          CEO & Founder
+        </p>
+        <div class="flex items-center justify-center gap-5">
+          <a
+            href="javascript:void(0)"
+            class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+          >
+            <i class="lni lni-linkedin-original"></i>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+          >
+            <i class="lni lni-instagram-original"></i>
+          </a>
+        </div>
+        </figcaption>
+        </figure>
+      </div>
+
+      <div class="scroll-revealed col-12 sm:col-6 md:col-4 lg:col-3">
+        <figure
+        class="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1"
+        >
+        <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
+        <img
+          src="https://dummyimage.com/120x120/cccccc/ffffff&text=TZ"
+          alt="Team picture"
+          class="h-full w-full rounded-full object-cover"
+        />
+        <span
+          class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-red-500 opacity-0 group-hover:opacity-100"
+        ></span>
+        <span
+          class="absolute top-0 right-0 -z-10 h-10 w-10 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100"
+        ></span>
+        </div>
+        <figcaption class="text-center block">
+        <h4
+          class="mb-1 text-lg font-semibold text-body-light-12 dark:text-body-dark-12"
+        >
+          Talitha Zarifah
+        </h4>
+        <p
+          class="mb-5 text-sm text-body-light-11 dark:text-body-dark-11"
+        >
+          Co-Founder
+        </p>
+        <div class="flex items-center justify-center gap-5">
+          <a
+            href="javascript:void(0)"
+            class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+          >
+            <i class="lni lni-linkedin-original"></i>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+          >
+            <i class="lni lni-github-original"></i>
+          </a>
+        </div>
+        </figcaption>
+        </figure>
+      </div>
+
+        <div class="scroll-revealed col-12 sm:col-6 md:col-4 lg:col-3">
+          <figure
+            class="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1"
+          >
+            <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
+            <img
+              src="https://dummyimage.com/120x120/cccccc/ffffff&text=AZ"
+              alt="Team picture"
+              class="h-full w-full rounded-full object-cover"
+            />
+            <span
+              class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-red-500 opacity-0 group-hover:opacity-100"
+            ></span>
+            <span
+              class="absolute top-0 right-0 -z-10 h-10 w-10 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100"
+            ></span>
+            </div>
+            <figcaption class="text-center block">
+            <h4
+              class="mb-1 text-lg font-semibold text-body-light-12 dark:text-body-dark-12"
+            >
+              Ahmad Zea C
+            </h4>
+            <p
+              class="mb-5 text-sm text-body-light-11 dark:text-body-dark-11"
+            >
+              Mobile Developer
+            </p>
+            <div class="flex items-center justify-center gap-5">
+              <a
+                href="javascript:void(0)"
+                class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+              >
+                <i class="lni lni-facebook-fill"></i>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+              >
+                <i class="lni lni-twitter-original"></i>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
+              >
+                <i class="lni lni-instagram-original"></i>
+              </a>
+            </div>
+            </figcaption>
+          </figure>
+        </div>
+        </div>
+      </div>
+    </section>
 
       <!-- Testimonials section -->
-      <section id="testimonials" class="section-area">
-        <div class="container">
-          <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-            <h6 class="mb-2 block text-lg font-semibold text-primary">
-              Client Reviews
-            </h6>
-            <h2 class="mb-6">Our Testimonials</h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum available but
-              the majority have suffered alteration in some form.
+    <section id="testimonials" class="section-area">
+    <div class="container">
+      <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
+      <h6 class="mb-2 block text-lg font-semibold text-primary">
+        Testimoni Pelanggan
+      </h6>
+      <h2 class="mb-6">Apa Kata Mereka tentang Sewoapp?</h2>
+      <p>
+        Berikut pengalaman nyata pelanggan Sewoapp dalam menggunakan layanan rental kendaraan kami.
+      </p>
+      </div>
+
+      <div
+      class="swiper testimonial-carousel common-carousel scroll-revealed"
+      >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        <div
+        class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
+        >
+        <p
+          class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
+        >
+          "Proses sewa mobil di Sewoapp sangat mudah dan cepat. Mobil yang saya dapatkan bersih dan terawat, cocok untuk perjalanan keluarga."
+        </p>
+        <figure class="flex items-center gap-4">
+          <div class="h-[50px] w-[50px] overflow-hidden">
+            <img
+            src="https://dummyimage.com/50x50/cccccc/ffffff&text=User+1"
+            alt="Testimonial picture"
+            class="h-full w-full rounded-full object-cover"
+            />
+          </div>
+          <figcaption class="flex-grow">
+            <h3
+            class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
+            >
+            Andi Pratama
+            </h3>
+            <p
+            class="text-xs text-body-light-10 dark:text-body-dark-10"
+            >
+            Karyawan Swasta
             </p>
-          </div>
-
-          <div
-            class="swiper testimonial-carousel common-carousel scroll-revealed"
-          >
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div
-                  class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
-                >
-                  <p
-                    class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
-                  >
-                    "Our members are so impressed. It's intuitive. It's clean.
-                    It's distraction free. If you're building a community."
-                  </p>
-                  <figure class="flex items-center gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden">
-                      <img
-                        src="./assets/img/avatar/avatar-4.jpg"
-                        alt="Testimonial picture"
-                        class="h-full w-full rounded-full object-cover"
-                      />
-                    </div>
-                    <figcaption class="flex-grow">
-                      <h3
-                        class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
-                      >
-                        Ralf Nacht
-                      </h3>
-                      <p
-                        class="text-xs text-body-light-10 dark:text-body-dark-10"
-                      >
-                        Web Entrepreneur
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div
-                  class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
-                >
-                  <p
-                    class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
-                  >
-                    "Our members are so impressed. It's intuitive. It's clean.
-                    It's distraction free. If you're building a community."
-                  </p>
-                  <figure class="flex items-center gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden">
-                      <img
-                        src="./assets/img/avatar/avatar-5.jpg"
-                        alt="Testimonial picture"
-                        class="h-full w-full rounded-full object-cover"
-                      />
-                    </div>
-                    <figcaption class="flex-grow">
-                      <h3
-                        class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
-                      >
-                        Sebastian Toft
-                      </h3>
-                      <p
-                        class="text-xs text-body-light-10 dark:text-body-dark-10"
-                      >
-                        Web Developer
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div
-                  class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
-                >
-                  <p
-                    class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
-                  >
-                    "Our members are so impressed. It's intuitive. It's clean.
-                    It's distraction free. If you're building a community."
-                  </p>
-                  <figure class="flex items-center gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden">
-                      <img
-                        src="./assets/img/avatar/avatar-6.jpg"
-                        alt="Testimonial picture"
-                        class="h-full w-full rounded-full object-cover"
-                      />
-                    </div>
-                    <figcaption class="flex-grow">
-                      <h3
-                        class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
-                      >
-                        Bao Shen
-                      </h3>
-                      <p
-                        class="text-xs text-body-light-10 dark:text-body-dark-10"
-                      >
-                        UI/UX Designer
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div
-                  class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
-                >
-                  <p
-                    class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
-                  >
-                    "Our members are so impressed. It's intuitive. It's clean.
-                    It's distraction free. If you're building a community."
-                  </p>
-                  <figure class="flex items-center gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden">
-                      <img
-                        src="./assets/img/avatar/avatar-7.jpg"
-                        alt="Testimonial picture"
-                        class="h-full w-full rounded-full object-cover"
-                      />
-                    </div>
-                    <figcaption class="flex-grow">
-                      <h3
-                        class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
-                      >
-                        Emanuel Velzeboer
-                      </h3>
-                      <p
-                        class="text-xs text-body-light-10 dark:text-body-dark-10"
-                      >
-                        Graphics Designer
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-[60px] flex items-center justify-center gap-1">
-              <div class="swiper-button-prev">
-                <i class="lni lni-arrow-left"></i>
-              </div>
-              <div class="swiper-button-next">
-                <i class="lni lni-arrow-right"></i>
-              </div>
-            </div>
-          </div>
+          </figcaption>
+        </figure>
         </div>
-      </section>
+        </div>
+
+        <div class="swiper-slide">
+        <div
+        class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
+        >
+        <p
+          class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
+        >
+          "Saya sangat terbantu dengan layanan customer service Sewoapp yang responsif. Motor yang saya sewa juga irit dan nyaman dipakai."
+        </p>
+        <figure class="flex items-center gap-4">
+          <div class="h-[50px] w-[50px] overflow-hidden">
+            <img
+            src="https://dummyimage.com/50x50/cccccc/ffffff&text=User+2"
+            alt="Testimonial picture"
+            class="h-full w-full rounded-full object-cover"
+            />
+          </div>
+          <figcaption class="flex-grow">
+            <h3
+            class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
+            >
+            Siti Rahma
+            </h3>
+            <p
+            class="text-xs text-body-light-10 dark:text-body-dark-10"
+            >
+            Mahasiswa
+            </p>
+          </figcaption>
+        </figure>
+        </div>
+        </div>
+
+        <div class="swiper-slide">
+        <div
+        class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
+        >
+        <p
+          class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
+        >
+          "Pilihan kendaraan listrik di Sewoapp sangat membantu saya yang peduli lingkungan. Proses booking online-nya juga praktis!"
+        </p>
+        <figure class="flex items-center gap-4">
+          <div class="h-[50px] w-[50px] overflow-hidden">
+            <img
+            src="https://dummyimage.com/50x50/cccccc/ffffff&text=User+3"
+            alt="Testimonial picture"
+            class="h-full w-full rounded-full object-cover"
+            />
+          </div>
+          <figcaption class="flex-grow">
+            <h3
+            class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
+            >
+            Budi Santoso
+            </h3>
+            <p
+            class="text-xs text-body-light-10 dark:text-body-dark-10"
+            >
+            Freelancer
+            </p>
+          </figcaption>
+        </figure>
+        </div>
+        </div>
+
+        <div class="swiper-slide">
+        <div
+        class="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 py-8 shadow-card-2 sm:px-8"
+        >
+        <p
+          class="mb-6 text-base text-body-light-11 dark:text-body-dark-11"
+        >
+          "Harga rental di Sewoapp sangat transparan dan tidak ada biaya tersembunyi. Saya pasti akan menggunakan Sewoapp lagi untuk perjalanan berikutnya."
+        </p>
+        <figure class="flex items-center gap-4">
+          <div class="h-[50px] w-[50px] overflow-hidden">
+            <img
+            src="https://dummyimage.com/50x50/cccccc/ffffff&text=User+4"
+            alt="Testimonial picture"
+            class="h-full w-full rounded-full object-cover"
+            />
+          </div>
+          <figcaption class="flex-grow">
+            <h3
+            class="text-sm font-semibold text-body-light-11 dark:text-body-dark-11"
+            >
+            Maria Lestari
+            </h3>
+            <p
+            class="text-xs text-body-light-10 dark:text-body-dark-10"
+            >
+            Ibu Rumah Tangga
+            </p>
+          </figcaption>
+        </figure>
+        </div>
+        </div>
+      </div>
+
+      <div class="mt-[60px] flex items-center justify-center gap-1">
+        <div class="swiper-button-prev">
+        <i class="lni lni-arrow-left"></i>
+        </div>
+        <div class="swiper-button-next">
+        <i class="lni lni-arrow-right"></i>
+        </div>
+      </div>
+      </div>
+    </div>
+    </section>
 
     <!-- FAQ section -->
     <section id="faq" class="section-area relative">
@@ -2482,7 +2464,7 @@
               class="w-full aspect-[3/2] rounded-xl overflow-hidden block"
             >
               <img
-                src="./assets/img/thumbnail/thumbnail-1.jpg"
+                src="https://dummyimage.com/600x400/cccccc/ffffff&text=Blog+1"
                 alt="Thumbnail"
                 class="w-full h-full object-cover group-hover:scale-[1.05] group-hover:rotate-[2deg]"
               />
@@ -2513,7 +2495,7 @@
               class="w-full aspect-[3/2] rounded-xl overflow-hidden block"
             >
               <img
-                src="./assets/img/thumbnail/thumbnail-2.jpg"
+                src="https://dummyimage.com/600x400/cccccc/ffffff&text=Blog+2"
                 alt="Thumbnail"
                 class="w-full h-full object-cover group-hover:scale-[1.05] group-hover:rotate-[2deg]"
               />
@@ -2544,7 +2526,7 @@
               class="w-full aspect-[3/2] rounded-xl overflow-hidden block"
             >
               <img
-                src="./assets/img/thumbnail/thumbnail-3.jpg"
+                src="https://dummyimage.com/600x400/cccccc/ffffff&text=Blog+3"
                 alt="Thumbnail"
                 class="w-full h-full object-cover group-hover:scale-[1.05] group-hover:rotate-[2deg]"
               />
@@ -2589,7 +2571,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/airbnb.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Airbnb"
             alt="Logo Mitra Airbnb"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2598,7 +2580,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/coca-cola.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Coca-Cola"
             alt="Logo Mitra Coca-Cola"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2607,7 +2589,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/facebook.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Facebook"
             alt="Logo Mitra Facebook"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2616,7 +2598,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/mandiri.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Mandiri"
             alt="Logo Mitra Mandiri"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2625,7 +2607,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/shopware.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Shopware"
             alt="Logo Mitra Shopware"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2634,7 +2616,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/spotify.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Spotify"
             alt="Logo Mitra Spotify"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2643,7 +2625,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/tunnel-id.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Tunnel+ID"
             alt="Logo Mitra Tunnel ID"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2652,7 +2634,7 @@
             class="scroll-revealed text-center p-4 col-12 sm:col-6 md:col-4 lg:col-3"
           >
             <img
-            src="./assets/img/brand/walmart.svg"
+            src="https://dummyimage.com/120x40/cccccc/ffffff&text=Walmart"
             alt="Logo Mitra Walmart"
             class="h-[40px] inline-block grayscale dark:invert hover:grayscale-0 hover:invert-0"
             />
@@ -2947,13 +2929,13 @@
           <div class="w-full md:w-1/2">
             <div class="my-1">
             <div class="flex flex-wrap justify-center gap-x-3 md:justify-start">
-                <a href="javascript:void(0)" class="text-body-dark-11 hover:text-body-dark-12" aria-label="Instagram">
+                <a href="https://www.instagram.com/sewoapp" class="text-body-dark-11 hover:text-body-dark-12" aria-label="Instagram">
                     <i class="lni lni-instagram-original"></i>
                 </a>
                 <a href="javascript:void(0)" class="text-body-dark-11 hover:text-body-dark-12" aria-label="YouTube">
                     <i class="lni lni-youtube"></i>
                 </a>
-                <a href="javascript:void(0)" class="text-body-dark-11 hover:text-body-dark-12" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/sewoapp" class="text-body-dark-11 hover:text-body-dark-12" aria-label="LinkedIn">
                     <i class="lni lni-linkedin-original"></i>
                 </a>
                 <a href="javascript:void(0)" class="text-body-dark-11 hover:text-body-dark-12" aria-label="Twitter">
@@ -2969,7 +2951,7 @@
           <div class="w-full md:w-1/2">
             <div class="my-1 flex justify-center md:justify-end">
               <p class="text-body-dark-11">
-                &#169; 2024 Sewoapp. All rights reserved.</a>
+                &#169; 2025 Sewoapp. All rights reserved.</a>
               </p>
             </div>
           </div>
