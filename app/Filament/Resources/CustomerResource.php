@@ -28,6 +28,7 @@ class CustomerResource extends Resource
             ->schema([
                 Section::make('Customer Information')->schema([
                     TextInput::make('username')
+                        ->unique()
                         ->required()
                         ->maxLength(255),
                     TextInput::make('fullname')
@@ -35,12 +36,15 @@ class CustomerResource extends Resource
                         ->maxLength(255),
                     TextInput::make('email')
                         ->email()
+                        ->unique()
                         ->required()
                         ->maxLength(255),
                     TextInput::make('phone_number')
-                        ->tel()
+                        ->numeric()
+                        ->unique()
                         ->maxLength(20),
                     TextInput::make('address')
+                        ->textarea()
                         ->maxLength(255),
                     TextInput::make('password')
                         ->password()
@@ -55,20 +59,16 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->sortable()->searchable(),
+                TextColumn::make('id_customer')->label('ID')->sortable()->searchable(),
                 TextColumn::make('username')->sortable()->searchable(),
                 TextColumn::make('fullname')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('phone_number')->sortable()->searchable(),
                 TextColumn::make('address')->sortable()->searchable(),
             ])
-            ->filters([
-
-            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-   Tables\Actions\DeleteAction::make(),
-
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

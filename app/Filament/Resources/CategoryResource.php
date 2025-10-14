@@ -23,7 +23,11 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('desc')
+                    ->maxLength(1000),
             ]);
     }
 
@@ -31,15 +35,13 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                //
-            ])
-            ->filters([
-                //
+                Tables\Columns\TextColumn::make('id_category')->label('ID')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('desc')->label('Description')->limit(50)->sortable()->searchable(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-   Tables\Actions\DeleteAction::make(),
-
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

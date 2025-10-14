@@ -23,7 +23,22 @@ class OrderDetailResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Select::make('id_order')
+                    ->relationship('order', 'id_order')
+                    ->required(),
+                Forms\Components\Select::make('id_vehicle')
+                    ->relationship('vehicle', 'vehicle_name')
+                    ->required(),
+                Forms\Components\TextInput::make('price')
+                    ->numeric()
+                    ->required(),
+                Forms\Components\TextInput::make('total_days')
+                    ->numeric()
+                    ->required(),
+                Forms\Components\TextInput::make('totalprice')
+                    ->numeric(),
+                Forms\Components\TextInput::make('total_price')
+                    ->numeric(),
             ]);
     }
 
@@ -31,15 +46,16 @@ class OrderDetailResource extends Resource
     {
         return $table
             ->columns([
-                //
-            ])
-            ->filters([
-                //
+                Tables\Columns\TextColumn::make('id_order_detail')->label('ID')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('order.id_order')->label('Order')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('vehicle.vehicle_name')->label('Vehicle')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('price')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('total_days')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('total_price')->sortable()->searchable(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-   Tables\Actions\DeleteAction::make(),
-
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
