@@ -18,7 +18,13 @@ class Customer extends Model
         'password',
     ];
     // add guaded
-    protected $guarded = ['id'];
+    protected $guarded = ['id_customer'];
     // add hidden
-    protected $hidden = ['created_at', 'updated_at'];
+    protected $hidden = ['password', 'created_at', 'updated_at'];
+
+    protected $casts = [
+        'password' => 'hashed',
+    ];
+
+    protected $primaryKey = 'id_customer';
 }
