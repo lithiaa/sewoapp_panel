@@ -23,14 +23,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'address' => 'Jl. Dinoyo Permai, lowokwaru, Kota Malang'
         ]);
-        Customer::factory()->create([
-            'username' => 'lithia',
-            'fullname' => 'Indrawan',
-            'email' => 'indraw910@gmail.com',
-            'phone_number' => '08234567891',
-            'password' => bcrypt('password'),
-            'address' => 'Jl. Merdeka No. 1, Kota Malang'
-        ]);
 
         Category::create([
             'name' => 'SeMobil',
