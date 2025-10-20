@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Customer;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +20,16 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'phone_number' => '08234567890',
+            'password' => bcrypt('password'),
             'address' => 'Jl. Dinoyo Permai, lowokwaru, Kota Malang'
+        ]);
+        Customer::factory()->create([
+            'username' => 'lithia',
+            'fullname' => 'Indrawan',
+            'email' => 'indraw910@gmail.com',
+            'phone_number' => '08234567891',
+            'password' => bcrypt('password'),
+            'address' => 'Jl. Merdeka No. 1, Kota Malang'
         ]);
 
         Category::create([
