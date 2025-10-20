@@ -7,6 +7,7 @@ use App\Filament\Resources\CustomerResource\RelationManagers;
 use App\Models\Customer;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -43,9 +44,9 @@ class CustomerResource extends Resource
                         ->numeric()
                         ->unique()
                         ->maxLength(20),
-                    TextInput::make('address')
-                        ->textarea()
-                        ->maxLength(255),
+                    Textarea::make('address')
+                        ->maxLength(255)
+                        ->rows(3),
                     TextInput::make('password')
                         ->password()
                         ->required()
