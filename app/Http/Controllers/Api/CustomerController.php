@@ -20,6 +20,7 @@ class CustomerController extends Controller
      *     path="/api/customers",
      *     tags={"Customers"},
      *     summary="Ambil semua customer",
+     *     security={{"sanctum":{}}},
      *     @OA\Response(
      *         response=200,
      *         description="List of customers"
@@ -36,6 +37,7 @@ class CustomerController extends Controller
      *     path="/api/customers/{id}",
      *     tags={"Customers"},
      *     summary="Ambil data customer berdasarkan ID",
+     *     security={{"sanctum":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -57,6 +59,7 @@ class CustomerController extends Controller
      *     path="/api/customers/{id}",
      *     tags={"Customers"},
      *     summary="Update data customer",
+     *     security={{"sanctum":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -89,6 +92,11 @@ class CustomerController extends Controller
             'address' => 'sometimes|nullable|string|max:255',
             'password' => 'sometimes|required|string|min:8|max:255',
         ]);
+
+        if (isset($validated['password'])) {
+            $validated['password'] = Hash::make($validated['password']);
+        }
+
         $customer->update($validated);
         return $customer;
     }
@@ -98,6 +106,7 @@ class CustomerController extends Controller
      *     path="/api/customers/{id}",
      *     tags={"Customers"},
      *     summary="Hapus customer",
+     *     security={{"sanctum":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -111,6 +120,7 @@ class CustomerController extends Controller
     public function destroy(string $id)
     {
         $customer = Customer::findOrFail($id);
+        $customer->tokens()->delete();
         $customer->delete();
         return response()->noContent();
     }
@@ -128,7 +138,15 @@ class CustomerController extends Controller
      *             @OA\Property(property="password", type="string")
      *         )
      *     ),
-     *     @OA\Response(response=200, description="Login berhasil"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Login berhasil",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string"),
+     *             @OA\Property(property="customer", type="object"),
+     *             @OA\Property(property="token", type="string")
+     *         )
+     *     ),
      *     @OA\Response(response=401, description="Login gagal")
      * )
      */
@@ -142,7 +160,17 @@ class CustomerController extends Controller
         $customer = Customer::where('username', $credentials['username'])->first();
 
         if ($customer && Hash::check($credentials['password'], $customer->password)) {
-            return response()->json(['message' => 'Login successful', 'customer' => $customer], 200);
+            // Hapus token lama (optional)
+            $customer->tokens()->delete();
+
+            // Buat token baru
+            $token = $customer->createToken('customer-token')->plainTextToken;
+
+            return response()->json([
+                'message' => 'Login successful',
+                'customer' => $customer,
+                'token' => $token
+            ], 200);
         } else {
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
@@ -165,7 +193,15 @@ class CustomerController extends Controller
      *             @OA\Property(property="password", type="string")
      *         )
      *     ),
-     *     @OA\Response(response=201, description="Registrasi berhasil")
+     *     @OA\Response(
+     *         response=201,
+     *         description="Registrasi berhasil",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string"),
+     *             @OA\Property(property="customer", type="object"),
+     *             @OA\Property(property="token", type="string")
+     *         )
+     *     )
      * )
      */
     public function register(Request $request)
@@ -183,7 +219,14 @@ class CustomerController extends Controller
 
         $customer = Customer::create($validated);
 
-        return response()->json(['message' => 'Registration successful', 'customer' => $customer], 201);
+        // Buat token untuk customer baru
+        $token = $customer->createToken('customer-token')->plainTextToken;
+
+        return response()->json([
+            'message' => 'Registration successful',
+            'customer' => $customer,
+            'token' => $token
+        ], 201);
     }
 
     /**
@@ -191,11 +234,31 @@ class CustomerController extends Controller
      *     path="/api/customers/logout",
      *     tags={"Customers"},
      *     summary="Logout customer",
+     *     security={{"sanctum":{}}},
      *     @OA\Response(response=200, description="Logout berhasil")
      * )
      */
     public function logout(Request $request)
     {
+        // Hapus token yang sedang digunakan
+        $request->user()->currentAccessToken()->delete();
+
         return response()->json(['message' => 'Logout successful'], 200);
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/api/customers/profile",
+     *     tags={"Customers"},
+     *     summary="Get profile customer yang sedang login",
+     *     security={{"sanctum":{}}},
+     *     @OA\Response(response=200, description="Profile customer")
+     * )
+     */
+    public function profile(Request $request)
+    {
+        return response()->json([
+            'customer' => $request->user()
+        ], 200);
     }
 }
