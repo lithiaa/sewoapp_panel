@@ -14,15 +14,18 @@ return Application::configure(basePath: dirname(__DIR__))
         apiPrefix: 'api',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // Jangan redirect API requests ke login
+        // Hanya redirect untuk web routes, JANGAN untuk API
         $middleware->redirectGuestsTo(function ($request) {
-            if ($request->expectsJson() || $request->is('api/*')) {
-                abort(401, 'Unauthenticated.');
+            // Jika request ke API, biarkan route middleware yang handle
+            if ($request->is('api/*')) {
+                return null;
             }
+            // Hanya redirect web routes ke login
             return route('filament.admin.auth.login');
         });
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        // Handle authentication exception untuk API
         $exceptions->render(function (AuthenticationException $e, $request) {
             if ($request->expectsJson() || $request->is('api/*')) {
                 return response()->json([
