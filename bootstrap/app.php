@@ -11,14 +11,20 @@ return Application::configure(basePath: dirname(__DIR__))
         api: __DIR__.'/../routes/api.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        apiPrefix: 'api',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // Jangan redirect API requests ke login
+        $middleware->redirectGuestsTo(function ($request) {
+            if ($request->expectsJson() || $request->is('api/*')) {
+                abort(401, 'Unauthenticated.');
+            }
+            return route('filament.admin.auth.login');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        // Handle unauthenticated requests for API
         $exceptions->render(function (AuthenticationException $e, $request) {
-            if ($request->is('api/*')) {
+            if ($request->expectsJson() || $request->is('api/*')) {
                 return response()->json([
                     'message' => 'Unauthenticated.'
                 ], 401);
