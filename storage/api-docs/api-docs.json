@@ -23,7 +23,12 @@
                     "200": {
                         "description": "List of customers"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
             }
         },
         "/api/customers/{id}": {
@@ -51,7 +56,12 @@
                     "404": {
                         "description": "Customer tidak ditemukan"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -106,7 +116,12 @@
                     "404": {
                         "description": "Customer tidak ditemukan"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
             },
             "delete": {
                 "tags": [
@@ -131,7 +146,12 @@
                     "404": {
                         "description": "Customer tidak ditemukan"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
             }
         },
         "/api/customers/login": {
@@ -165,7 +185,25 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Login berhasil"
+                        "description": "Login berhasil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "customer": {
+                                            "type": "object"
+                                        },
+                                        "token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "401": {
                         "description": "Login gagal"
@@ -218,7 +256,25 @@
                 },
                 "responses": {
                     "201": {
-                        "description": "Registrasi berhasil"
+                        "description": "Registrasi berhasil",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "customer": {
+                                            "type": "object"
+                                        },
+                                        "token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -234,7 +290,31 @@
                     "200": {
                         "description": "Logout berhasil"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/customers/profile": {
+            "get": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Get profile customer yang sedang login",
+                "operationId": "5cef06c6437ae737fa450a08d165a9d7",
+                "responses": {
+                    "200": {
+                        "description": "Profile customer"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
             }
         },
         "/api/orders": {
