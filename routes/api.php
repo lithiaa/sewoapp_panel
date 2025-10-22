@@ -8,14 +8,13 @@ use App\Http\Controllers\Api\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Customer Auth routes (Public - Tidak perlu token)
+// Public routes - Tidak perlu token
+Route::post('/login', [AuthController::class, 'login'])->name('api.login');
+
 Route::prefix('customers')->group(function () {
     Route::post('/register', [CustomerController::class, 'register']);
     Route::post('/login', [CustomerController::class, 'login']);
 });
-
-// Auth routes (Admin/Staff) - Public
-Route::post('/login', [AuthController::class, 'login'])->name('api.login');
 
 // Protected routes (Perlu token)
 Route::middleware('auth:sanctum')->group(function () {
@@ -28,10 +27,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('customers')->group(function () {
         Route::post('/logout', [CustomerController::class, 'logout']);
         Route::get('/profile', [CustomerController::class, 'profile']);
-    });
 
-    // CRUD Customer (hanya untuk admin/staff yang sudah login)
-    Route::apiResource('customers', CustomerController::class);
+        // CRUD operations untuk customer (manual routes untuk avoid conflict)
+        Route::get('/', [CustomerController::class, 'index']);
+        Route::get('/{id}', [CustomerController::class, 'show']);
+        Route::put('/{id}', [CustomerController::class, 'update']);
+        Route::delete('/{id}', [CustomerController::class, 'destroy']);
+    });
 
     // Vehicle routes
     Route::apiResource('vehicles', VehicleController::class);
