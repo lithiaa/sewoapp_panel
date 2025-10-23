@@ -26,12 +26,12 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // Handle authentication exception untuk API
-        // $exceptions->render(function (AuthenticationException $e, $request) {
-        //     if ($request->expectsJson() || $request->is('api/*')) {
-        //         return response()->json([
-        //             'message' => 'Unauthenticated loh yah.'
-        //         ], 401);
-        //     }
-        // });
+        $exceptions->render(function (AuthenticationException $e, $request) {
+            if ($request->expectsJson() || $request->is('api/*')) {
+                return response()->json([
+                    'message' => $e->getMessage()
+                ], 401);
+            }
+        });
     })->create();
 
