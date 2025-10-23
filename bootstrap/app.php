@@ -29,7 +29,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (AuthenticationException $e, $request) {
             if ($request->expectsJson() || $request->is('api/*')) {
                 return response()->json([
-                    'message' => 'Unauthenticated.'
+                    'message' => 'Unauthenticated loh yah.'
                 ], 401);
             }
         });
