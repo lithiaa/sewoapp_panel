@@ -99,6 +99,8 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
 
     @vite(['resources/css/main.css'])
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6336323137281940"
+     crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Page loading -->
